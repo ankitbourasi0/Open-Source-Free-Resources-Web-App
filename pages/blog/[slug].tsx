@@ -85,7 +85,7 @@ function Blog({ blog }: Props) {
 
         {/* categories */}
         <div className="flex space-x-2">
-          { blog.categories.map((category, index) => (
+          { blog.categories && blog.categories.map((category, index) => (
             <CategoryBox category={category} />
           ))}
         </div>
