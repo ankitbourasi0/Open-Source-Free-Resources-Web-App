@@ -18,4 +18,13 @@ function Blogs({ blogs }: Props) {
 
 export default Blogs;
 
+export const getStaticProps: GetStaticProps = async (context) => {
+  const blogs = await services.queryBlogs();
+
+  return {
+    props: {
+      blogs,
+    },
+  };
+};
 

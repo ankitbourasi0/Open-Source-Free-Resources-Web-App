@@ -4,7 +4,7 @@ import Image from "next/image";
 import services from "@/services/index";
 import Container from "../layouts/Container";
 import LatestBlog from "components/blogs/LatestBlog";
-import Blogs from "./blogs";
+import Blogs from "./blogspage";
 import Link from "next/link";
 import Contribution from "./contribution";
 

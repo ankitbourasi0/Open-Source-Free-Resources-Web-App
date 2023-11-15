@@ -22,7 +22,7 @@ query Blogs {
       content{
         html
       }
-      categories(first: 2){
+      categories{
         name
       }
     }

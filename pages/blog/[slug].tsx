@@ -100,7 +100,7 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
   const blogs = await services.queryBlogs();
 
   return {
-    paths:  blogs?.map((blog) => ({ params: { slug: blog.slug } })),
+    paths:  blogs.map((blog) => ({ params: { slug: blog.slug } })),
     fallback: "blocking",
   };
 };
