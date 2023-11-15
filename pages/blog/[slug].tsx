@@ -1,7 +1,7 @@
 import WebImage from "components/WebImage";
 import Container from "layouts/Container";
 import { GetStaticPaths, GetStaticProps } from "next";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import services from "services";
 import parse, { Element } from "html-react-parser";
 import moment from "moment";
@@ -18,17 +18,7 @@ type Category = {
 
 function Blog({ blog }: Props) {
   const timeToRead = readingTime(blog.content.html);
-  const [categoriesData, setCategoriesData] = useState<Category[]>([])
 
-  useEffect(() => {
-    
-    if (blog.categories !== undefined && blog.categories !== null) {
-      console.log(categoriesData)
-      
-      setCategoriesData(blog.categories)
-    }
-  }, [blog])
-    
   return (
     <Container
       meta={{
@@ -95,7 +85,7 @@ function Blog({ blog }: Props) {
 
         {/* categories */}
         <div className="flex space-x-2">
-          {categoriesData.map((category, index) => (
+          { blog.categories.map((category, index) => (
             <CategoryBox category={category} />
           ))}
         </div>
