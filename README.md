@@ -1,13 +1,17 @@
 ## 🖼️ Screenshots
 
-![image](https://user-images.githubusercontent.com/105836795/206097859-96c3a007-9a97-4803-9409-fba86a374a93.png)
-![Screenshot (4)](https://user-images.githubusercontent.com/105836795/206097873-106baf8a-5bbb-48bd-b851-4411db32bc02.png)
+![image](https://github.com/ankitbourasi0/Open-Source-Free-Resources-Web-App/assets/34002165/49261748-78ec-4c67-a02a-067918c598b9)
+
+![image](https://github.com/ankitbourasi0/Open-Source-Free-Resources-Web-App/assets/34002165/7e53d914-e046-4812-aaf3-b8e17423306f)
+
+![image](https://github.com/ankitbourasi0/Open-Source-Free-Resources-Web-App/assets/34002165/6b395de9-0967-4a2d-95c0-a8ae6bbc818e)
+
 
 ## 💻 Tech Stack
-* Graphql
-* Hygraph cms
+* Typescript
+* Hygraph CMS
 * Nextjs
 * Typescript
 
-## 📺 Youtube video
-Youtube video for this code in Hindi is available at -- https://youtu.be/1BKitnWp2Sc
+
+
