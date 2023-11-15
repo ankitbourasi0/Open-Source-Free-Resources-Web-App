@@ -85,8 +85,8 @@ function Blog({ blog }: Props) {
 
         {/* categories */}
         <div className="flex space-x-2">
-          { blog.categories && blog.categories.map((category, index) => (
-            <CategoryBox category={category} />
+          { blog?.categories?.map((category, index) => (
+            <CategoryBox category={category} key={index} />
           ))}
         </div>
       </div>
@@ -100,7 +100,7 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
   const blogs = await services.queryBlogs();
 
   return {
-    paths: blogs && blogs.map((blog) => ({ params: { slug: blog.slug } })),
+    paths:  blogs?.map((blog) => ({ params: { slug: blog.slug } })),
     fallback: "blocking",
   };
 };
