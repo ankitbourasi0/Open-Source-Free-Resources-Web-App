@@ -21,7 +21,7 @@ const Blog = ({ blog }: Props) => {
           <div className="w-[75%] sm:w-[60%] ">
 
             <h1 className="uppercase sm:text-[20px] text-[16px] font-bold line-clamp-2  ">{blog.title}</h1>
-            <p className="text-[16px] hidden sm:mb-0  sm:block font-serif text-zinc-600 line-clamp-3">{blog.description}</p>
+            <p className="text-[16px] hidden sm:mb-0  sm:block font-serif text-zinc-600 line-clamp-3 sm:line-clamp-3">{blog.description}</p>
 
           </div>
 

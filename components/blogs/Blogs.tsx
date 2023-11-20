@@ -12,7 +12,8 @@ const Blogs = ({ blogs }: Props) => {
         <div key={index}>
           <Blog blog={blog} />
         </div>
-      ))}
+      ))
+      }
     </div>
   );
 };
