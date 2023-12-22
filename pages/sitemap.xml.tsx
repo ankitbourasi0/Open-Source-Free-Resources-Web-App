@@ -16,7 +16,7 @@ const createSitemap = (
         .map((slug) => {
           return `
               <url>
-                  <loc>${`https://blogging-tutorial-app.vercel.app/${slug}`}</loc>
+                  <loc>${`https://open-source-free-resources-web-app.vercel.app/${slug}`}</loc>
               </url>
           `;
         })

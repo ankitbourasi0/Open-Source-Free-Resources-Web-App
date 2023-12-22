@@ -17,7 +17,7 @@ export const ShareButton = ({
 }) => {
   return (
     <button
-      className={`text-white w-full items-center justify-center flex space-x-2 px-3 py-2 rounded-md ${className}`}
+      className={`text-white p-3  rounded-md ${className}`}
       onClick={onClick}
     >
       {/* logo */}
@@ -67,12 +67,12 @@ const Sharer = ({ blog }: Props) => {
   };
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+    <div className="grid lg:grid-cols-10 grid-cols-4 ">
       {/* native share */}
       <div className="cols-span-1">
         <ShareButton
           Icon={ShareIcon}
-          title="Share"
+          title=""
           className="bg-zinc-800"
           onClick={nativeShare}
         />
@@ -82,7 +82,7 @@ const Sharer = ({ blog }: Props) => {
       <div className="cols-span-1">
         <ShareButton
           Icon={BsWhatsapp}
-          title="Whatsapp"
+          title=""
           className="bg-green-500"
           onClick={whatsappShare}
         />
@@ -92,7 +92,7 @@ const Sharer = ({ blog }: Props) => {
       <div className="cols-span-1">
         <ShareButton
           Icon={BsTelegram}
-          title="Telegram"
+          title=""
           className="bg-blue-500"
           onClick={telegramShare}
         />
@@ -102,7 +102,7 @@ const Sharer = ({ blog }: Props) => {
       <div className="cols-span-1">
         <ShareButton
           Icon={BsTwitter}
-          title="Twitter"
+          title=""
           className="bg-sky-500"
           onClick={twitterShare}
         />

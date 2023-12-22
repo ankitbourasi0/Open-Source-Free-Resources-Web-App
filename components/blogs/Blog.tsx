@@ -15,7 +15,7 @@ const Blog = ({ blog }: Props) => {
     <Link href={`/blog/${blog.slug}` } >
 
 
-      <div className="w-full  bg-white border-b-2 pt-4 pb-6  " >
+      <div className="w-full   border-b- pt-4 pb-6  " >
 
         <div className="flex justify-between   items-star sm:mb-0  mb-2">
           <div className="w-[75%] sm:w-[60%] ">

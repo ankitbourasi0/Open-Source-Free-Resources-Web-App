@@ -10,9 +10,13 @@ type Props = {
 
 function Blogs({ blogs }: Props) {
   return (
-    <Container meta={{ title: "Blogs" }}>
-      <BlogsBox blogs={blogs} />
-    </Container>
+
+    <div className="flex flex-col items-center sm:px-8 px-6">
+      <div className="max-w-3xl w-full">
+        <BlogsBox blogs={blogs} />
+      </div>
+    </div>
+
   );
 }
 

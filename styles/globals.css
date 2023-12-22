@@ -1,7 +1,50 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@font-face {
+    font-family: 'TTLoveliesScript';
+    src: url('../public/TTLoveliesScript.ttf');
+  }
+  @font-face {
+    font-family: 'BelovedTeacher';
+    src: url('../public/BelovedTeacher.ttf');
+  }
+  @font-face {
+    font-family: 'Blogh';
+    src: url('../public/Blogh.otf');
+  }
+  @font-face {
+    font-family: 'BlueSpirits';
+    src: url('../public/BlueSpirits.otf');
+  }
+  @font-face {
+    font-family: 'BlueSpiritsAlt';
+    src: url('../public/BlueSpiritsAlt.otf');
+  }
+  @font-face {
+    font-family: 'Bridgeville';
+    src: url('../public/Bridgeville.ttf');
+  }
+  @font-face {
+    font-family: 'BrightMelody';
+    src: url('../public/BrightMelody.otf');
+  }
+  @font-face {
+    font-family: 'gordqucikblack';
+    src: url('../public/gordqucikblack.otf');
+  }
+  @font-face {
+    font-family: 'Murberry';
+    src: url('../public/Murberry.ttf');
+  }
+  @font-face {
+    font-family: 'Sharkbit';
+    src: url('../public/Sharkbit.ttf');
+  }
+  @font-face {
+    font-family: 'Starife';
+    src: url('../public/Starife.ttf');
+  }
 body{
     font-family: 'Poppins';
 }

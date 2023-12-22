@@ -10,7 +10,7 @@ const Container = ({ children, meta }: ContainerProps) => {
   const router = useRouter();
 
   return (
-    <div className="mb-8 dark:bg-zinc-900">
+    <div className="mb-8 pt-20 dark:bg-zinc-900 ">
       {/* Head */}
 
       <Head>
@@ -19,11 +19,11 @@ const Container = ({ children, meta }: ContainerProps) => {
         <meta content={meta.description} name="description" />
         <meta
           property="og:url"
-          content={`https://https://blogging-tutorial-app.vercel.app/${router.asPath}`}
+          content={`https://https://open-source-free-resources-web-app.vercel.app/${router.asPath}`}
         />
         <link
           rel="canonical"
-          href={`https://https://blogging-tutorial-app.vercel.app/${router.asPath}`}
+          href={`https://https://open-source-free-resources-web-app.vercel.app/${router.asPath}`}
         />
         <meta property="og:site_name" content="Next Dev" />
         <meta property="og:description" content={meta.description} />
@@ -41,16 +41,11 @@ const Container = ({ children, meta }: ContainerProps) => {
       {/* Head closing */}
 
       {/* main */}
-      <div className="flex flex-col items-center sm:px-8 px-6">
-        <div className="max-w-3xl w-full">
-          {/* navbar */}
-          {/* <Navbar /> */}
-          {/* navbar closing */}
-    
+      <div className="flex flex-col items-center sm:px-8 px-0">
+        <div className="lg:max-w-3xl w-full">
+        
           <div className="">
-            {children
-            
-          }
+            {children}
 
 
             {/* add this too about us page   */}

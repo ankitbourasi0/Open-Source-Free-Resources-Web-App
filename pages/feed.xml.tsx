@@ -14,14 +14,14 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   const feed = new Rss({
     title: "Next Dev",
-    site_url: "https://https://blogging-tutorial-app.vercel.app/",
-    feed_url: "https://blogging-tutorial-app.vercel.app/feed.xml",
+    site_url: "https://https://open-source-free-resources-web-app.vercel.app/",
+    feed_url: "https://open-source-free-resources-web-app.vercel.app/feed.xml",
   });
 
   blogs.map((blog) =>
     feed.item({
       title: blog.title,
-      url: `https://blogging-tutorial-app.vercel.app/blog/${blog.slug}`,
+      url: `https://open-source-free-resources-web-app.vercel.app/blog/${blog.slug}`,
       date: blog.publishedAt,
       description: blog.description,
     })

@@ -5,8 +5,11 @@ import React, { useEffect, useState } from "react";
 import { SunIcon, MoonIcon } from "@heroicons/react/24/outline";
 import classNames from "classnames";
 import {usePathname} from "next/navigation";
-
+import Searchbar from "components/Searchbar";
+import useMediaQuery from "components/utils/useCustomScreenSize";
+import { TbMenu } from "react-icons/tb";
 type Props = {};
+
 
 const Navbar = (props: Props) => {
   // states
@@ -32,7 +35,7 @@ const Navbar = (props: Props) => {
     },
     {
       label: 'Categories',
-      href: "/categoriesPage"
+      href: "/category"
     },
     {
       label: 'About',
@@ -43,16 +46,19 @@ const Navbar = (props: Props) => {
       href: "/contribution"
     },
   ]
-
+  
+ const isBreakPoint = useMediaQuery(768)
   return (
-    <div className="flex justify-between py-6 items-center w-full">
+    <div className="flex fixed bg-[#CCE8CC]  z-50  justify-between lg:py-4 py-3 items-center w-full px-6 lg:px-12">
       {/* title */}
       <Link href="/">
-        <h1 className="text-xl font-bold">Next IS Free</h1>
+        <h1 className="lg:text-3xl font-bluespirit ">Samosa-bytes</h1>
       </Link>
 
-
-      <ul className="flex space-x-6 items-center justify-center">
+    {isBreakPoint ? 
+    <button onClick={()=>console.log("hekko")}><TbMenu size={30}/></button>
+     :(
+      <ul className="flex space-x-6 text-sm items-center justify-center">
         {navlinks.map(link =>
           <Link href={link.href} key={link.href} className={classNames({
             "text-zinc-800 dark:text-white" : link.href === currentPath,
@@ -61,9 +67,11 @@ const Navbar = (props: Props) => {
             
 
           })}>{link.label}</Link>)}
-      </ul>
+          {/* <Searchbar /> */}
+      </ul>)
+      }
 
-      <button
+      {/* <button
         aria-label="Toogle Dark Mode"
         type="button"
         className="w-9 h-9 bg-zinc-200 rounded-lg dark:bg-zinc-600 flex items-center justify-center hover:ring-2 ring-gray-300 transition-all"
@@ -82,7 +90,7 @@ const Navbar = (props: Props) => {
             )}
           </>
         )}
-      </button>
+      </button> */}
     </div>
   );
 };

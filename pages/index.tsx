@@ -7,6 +7,7 @@ import LatestBlog from "components/blogs/LatestBlog";
 import Blogs from "./blogspage";
 import Link from "next/link";
 import Contribution from "./contribution";
+import Navbar from "layouts/Navbar";
 
 /*
 
@@ -25,35 +26,29 @@ type Props = {
 
 const Home = ({ blogs }: Props) => {
 
-  console.log("All blogs:",blogs)
+  // console.log("All blogs:",blogs)
   return (
-   <div>
-     <Container meta={{ title: "Next Dev" }}>
-      <h2 className="text-lg font-semibold mb-2">Latest Blog</h2>
+   <div className="bg-[#CCE8CC]/50">
+        
 
-      <div className="w-full max-w-5xl grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+     <Container meta={{ title: "SamosaBytes" }}>
+      {/* <h2 className="text-lg font-semibold mb-2">Latest Blog</h2> */}
 
-   
+      <div className="w-full max-w-5xl grid gap-8 md:grid-cols-2 lg:grid-cols-3 ">
       
         {/* latest blog */}
         {blogs.slice(-3).map(item=>
-          
           <LatestBlog blog={item} key={item.id} />
-    
           )}
-    
-  
-        {/* blogs */}
-        {/* <Blogs blogs={blogs.slice(3, 10)} /> */}
       </div>
-
-      
-
-      
     </Container>
-          <div className="max-w-3xl mx-auto w-full">
+    
+    {/* All Blogs  */}
+    <div className="max-w-3xl mx-auto w-full">
           <Blogs blogs={blogs} />
-          </div>
+    </div>
+
+
    </div>
   );
 };
