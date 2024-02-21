@@ -5,7 +5,7 @@ type Props = {};
 
 function NotFound({}: Props) {
   return (
-    <Container meta={{ title: "Page Not Found" }}>
+    <Container maxWidth="5xl" meta={{ title: "Page Not Found" }}>
       <h1 className="text-xl font-bold">😁 Page Not Found</h1>
     </Container>
   );
