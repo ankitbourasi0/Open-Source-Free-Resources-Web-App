@@ -8,11 +8,14 @@ import Script from "next/script";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <main>
-      <Script id="Adsense-id" data-ad-client="ca-pub-987************676"
+      <Script id="Adsense-id" data-ad-client="ca-pub-4782798272247151"
         async strategy="afterInteractive"
         onError={(e) => { console.error('Script failed to load', e) }}
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        crossOrigin="anonymous"
       />
+        <Script type='text/javascript' src='//pl22573999.profitablegatecpm.com/0b/70/41/0b7041be3c65bda5fb81457794288a43.js'></Script>
+
       <ThemeProvider attribute="class">
 
         <Analytics />
