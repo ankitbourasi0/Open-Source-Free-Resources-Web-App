@@ -11,8 +11,13 @@ type Blog = {
         html: string
     }
     categories:Category[],
+    contentType:{
+        contentName:string
+    }
    
 }
+
+
 
 type Category = {
     name: string
@@ -21,6 +26,7 @@ type Category = {
 type ContainerProps = {
     children: React.ReactNode
     meta: MetaTags
+    maxWidth: string
 }
 
 type MetaTags = {

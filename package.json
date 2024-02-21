@@ -9,6 +9,7 @@
     "@apollo/client": "^3.7.1",
     "@heroicons/react": "^2.0.13",
     "@next/font": "^13.0.6",
+    "@tailus/themer": "^0.0.4",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.8",
     "@vercel/analytics": "^0.1.11",

@@ -21,6 +21,12 @@ export class Services{
 
         return blog
     }
+    // async queryContentType(){
+    //     const data = await graphqlFetcher(queries.ContentTypeQuery);
+    //     const contentTypes:ContentType[] = data.contentTypesConnection.edges.node
+    //     console.log("\n \n content::: \n\ \n nnnn "+ data["contentTypesConnection"]["edges"])
+    //     return contentTypes
+    // }
 
 }
 

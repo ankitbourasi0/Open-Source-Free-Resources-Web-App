@@ -5,12 +5,12 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import Contribution from "pages/contribution";
 
-const Container = ({ children, meta }: ContainerProps) => {
+const Container = ({ children, meta,maxWidth }: ContainerProps) => {
   // instances
   const router = useRouter();
 
   return (
-    <div className="mb-8 pt-20 dark:bg-zinc-900 ">
+    <div className=" mb-0 dark:bg-zinc-900 ">
       {/* Head */}
 
       <Head>
@@ -41,18 +41,12 @@ const Container = ({ children, meta }: ContainerProps) => {
       {/* Head closing */}
 
       {/* main */}
-      <div className="flex flex-col items-center sm:px-8 px-0">
-        <div className="lg:max-w-3xl w-full">
-        
-          <div className="">
-            {children}
-
-
-            {/* add this too about us page   */}
-            {/* <EmailSubscriptionBox /> */}
-
-            {/* <Footer /> */}
-          </div>
+      <div className="bg-white flex flex-col items-center sm:px-8 px-0 w-full">
+        <div className={`lg:max-w-${maxWidth} w-full mx-auto flex  `}>
+          {children}
+          {/* add this too about us page   */}
+          {/* <EmailSubscriptionBox /> */}
+          {/* <Footer /> */}
         </div>
       </div>
       {/* main closing */}

@@ -9,7 +9,7 @@ type Props = {
 const CategoryCard = ({ blog }: Props) => {
   return (
     <Link href={`/blog/${blog.slug}` } >
-    <div className="card max-w-[20rem] min-h-[24rem] h-full bg-base-100 shadow-xl hover:scale-105 transition-all  duration-300">
+    <div className="card  max-w-[20rem] min-h-[24rem] h-full bg-white shadow-xl hover:scale-105 transition-all  duration-300">
     <figure><Image   height={1080}
               width={1920}
               alt={blog.title}  src={blog?.thumbnail?.url}  /></figure>

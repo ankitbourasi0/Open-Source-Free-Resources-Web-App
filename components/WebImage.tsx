@@ -20,7 +20,7 @@ const WebImage = ({ legacy = true, ...props }: Props) => {
       height={props.height}
       width={props.width}
       layout="responsive"
-      className={`object-cover ${props.className} rounded-lg  bg-zinc-200 dark:bg-zinc-800`}
+      className={`object-cover ${props.className} rounded-lg   dark:bg-zinc-800`}
     />
   ) : (
     <Image
@@ -29,7 +29,7 @@ const WebImage = ({ legacy = true, ...props }: Props) => {
       height={props.height}
       width={props.width}
       layout="responsive"
-      className={`${props.className} rounded-md  bg-zinc-200 dark:bg-zinc-800`}
+      className={`${props.className} rounded-md   dark:bg-zinc-800`}
     />
   );
 };

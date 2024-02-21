@@ -1,7 +1,10 @@
+import WebImage from 'components/WebImage';
 import CategoryCard from 'components/category/CategoryCard';
+import useMediaQuery from 'components/utils/useCustomScreenSize';
 import { GetStaticProps } from 'next';
-import React, { useState } from 'react'
-import { FaArrowRight } from "react-icons/fa";
+import Image from 'next/image';
+import React, { useEffect, useState } from 'react'
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import services from 'services';
 type Props = {
   blogs: Blog[];
@@ -10,7 +13,9 @@ type Props = {
 
 const Categories = ({ blogs }: Props) => {
   const [query, setQuery] = useState('');
+  const [isCategoryButtonClicked, setisCategoryButtonClicked] = useState(true)
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(blogs)
     setQuery(e.target.value)
   }
 
@@ -22,20 +27,55 @@ const Categories = ({ blogs }: Props) => {
         )
     )
   }
+  const [AllCategories, setAllCategories] = useState<string[][]>([])
+  
+  useEffect(() => {
+
+     let temp = blogs.map(blog => blog.categories.map(e => e.name).filter(
+      (value, index, current_value) => current_value.indexOf(value) === index
+    ))
+    setAllCategories(temp)
+
+  }, [isCategoryButtonClicked])
+
+
   const filtered = multipleSearch(blogs)
+  const isBreakPoint = useMediaQuery(768)
   return (
-    
-    <div className='w-full bg-[#CCE8CC]/50 min-h-screen py-12'>
-      <div className='w-full my-12 text-center text-3xl lg:text-5xl font-semibold'>
+
+    <div id='categoriesbg' className='w-full bg-[#CCE8CC]/50 min-h-screen py-12'>
+
+      {isCategoryButtonClicked ? (<React.Fragment>
+        <div className='w-full my-12 text-gray-800 text-center text-3xl lg:text-5xl font-semibold'>
+          <h1 className=' '>Search Simple,
+          </h1>
+          <p className='font-beloved '>as  <span className='font-poppins'>Never Before!!</span></p>
+      
+        </div>
+        <div className='w-full mx-auto mb-6 max-w-6xl flex flex-col items-center'>
+          <div className='flex w-full max-w-xl mx-auto '>
+           {isBreakPoint?"":(
+           <div className='w-full max-w-[70px] mr-1'> <WebImage src={"/SAMOSAIMAGES/PNGS/search11.png"} width={64} height={64} alt='samosa'/></div>
+           )} 
+          <input type="text" onChange={handleChange} placeholder="Type here" className="input input-bordered w-full mx-2" />
+          {isBreakPoint?"":(
+          <div className='w-full max-w-[70px] ml-1'> <WebImage src={"/SAMOSAIMAGES/PNGS/search22.png"} width={64} height={64} alt='samosa'/></div>
+          )}
+         
+          </div>
+          {/* <button className="btn my-4 btn-sm" onClick={() => setisCategoryButtonClicked(prev => !prev)}>Categories<FaArrowRight /> </button> */}
+        </div>
+      </React.Fragment>) : <div className='w-full my-12 text-center text-3xl lg:text-5xl font-semibold'>
         <h1 className=' '>Search Simple,
         </h1>
         <p className='font-beloved '>as  <span className='font-poppins'>Never Before!!</span></p>
+        <p className='text-sm mb-2'>Choose categories</p>
+        <div className='grid lg:grid-cols-4 gap-2 max-w-2xl mx-auto'>
+       {AllCategories.map(e=>e.map(e=><p className='text-sm px-1 py-1 bg-gray-100 rounded-2xl ' >{e}</p>))}
+        </div>
+        <button className="btn my-4 btn-sm" onClick={() => setisCategoryButtonClicked(prev => !prev)}><FaArrowLeft />Search </button>
 
-      </div>
-      <div className='w-full mx-auto mb-6 max-w-6xl flex flex-col items-center'>
-        <input type="text" onChange={handleChange} placeholder="Type here" className="input input-bordered w-full max-w-[18rem] lg:max-w-lg" />
-        <button className="btn my-4 btn-sm">Categories<FaArrowRight /> </button>
-      </div>
+      </div>}
 
       <div className='w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-y-6 gap-x-4  px-6 lg:max-w-5xl mx-auto'>
         {filtered.map((blog, index) => (
