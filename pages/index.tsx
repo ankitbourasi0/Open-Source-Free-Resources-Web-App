@@ -9,7 +9,7 @@ import Blogs from "./blogspage";
 import Link from "next/link";
 import Contribution from "./contribution";
 import Navbar from "layouts/Navbar";
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import WebImage from "components/WebImage";
 import { MdAllInclusive } from "react-icons/md";
 import { SiCoursera } from "react-icons/si";
@@ -39,7 +39,7 @@ type Props = {
 
 
 const Home = ({ blogs }: Props) => {
-
+// console.log("helelooooooooooooo",blogs,"")
 
   const sideBar = [
     {
@@ -109,9 +109,21 @@ const Home = ({ blogs }: Props) => {
               <div className="w-full justify-center items-center mx-auto ">
                 <Image src={"/BG/empty.svg"} className=" md:min-w-[600px] min-w-[130px] mx-auto  " fill={false} width={420} height={360} alt="No Blogs" />
               </div> :
-              data.map(item => <LatestBlog blog={item} key={item.id} />))
+              data.map(item => 
+              <Suspense>
+              <LatestBlog blog={item} key={item.id} />
+                
+              </Suspense>
+              )
+              )
               :
-              (blogs.map(item => <LatestBlog blog={item} key={item.id} />))
+              (blogs.map(item =>
+                <Suspense fallback={<div id="loader"></div>}>
+                <LatestBlog blog={item} key={item.id} />
+
+                </Suspense>
+                
+                ))
             }
 
           </div>

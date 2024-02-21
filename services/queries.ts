@@ -3,7 +3,8 @@ import { gql } from "@apollo/client";
 // query for fetching multiple blogs
 export const BlogsQuery = gql`
   query Blogs {
-    blogs {
+    #change this number cuz it 10 by default and change to 100 get all but try to pagination and or load spinner for optimation
+    blogs(first:100,orderBy: publishedAt_DESC) {
       description
       id
       publishedAt
