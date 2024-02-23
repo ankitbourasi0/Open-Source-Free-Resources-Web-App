@@ -17,7 +17,7 @@ const Navbar = (props: Props) => {
   // states
   const [mounted, setMounted] = useState<boolean>(false);
   const { resolvedTheme, setTheme } = useTheme();
-
+  
   const [isOpen, setIsOpen] = useState(false); // State for mobile menu visibility
 
   // Customize these placeholder values for your branding
@@ -48,8 +48,8 @@ const Navbar = (props: Props) => {
       href: "/"
     },
     {
-      label: 'Categories',
-      href: "/category"
+      label: 'Search',
+      href: "/search"
     },
     {
       label: 'About',
@@ -68,8 +68,8 @@ const Navbar = (props: Props) => {
       fn: toggleMenu
     },
     {
-      name:"Category",
-      href:'/category',
+      name:"Search",
+      href:'/search',
       className: `${textColor} block py-2 px-4 hover:text-${brandColor}`,
       fn: toggleMenu
     },
@@ -101,15 +101,32 @@ const Navbar = (props: Props) => {
       <div className="">
         {isBreakPoint ?
 
-          <button
-            className="flex items-center justify-center text-gray-400 md:hidden focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 focus:ring-offset-white"
-            onClick={toggleMenu}
-          >
-            <TbMenu size={30} />
+<div>
+<div className="block lg:hidden">
+<button
+  onClick={() => setIsOpen(!isOpen)}
+  className="flex items-center px-3 py-2 rounded text-black-500 hover:text-black-400"
+>
+  <svg
+    className={`fill-current h-3 w-3 ${isOpen ? "hidden" : "block"}`}
+    viewBox="0 0 20 20"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+  </svg>
+  <svg
+    className={`fill-current h-3 w-3 ${isOpen ? "block" : "hidden"}`}
+    viewBox="0 0 20 20"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z" />
+  </svg>
+</button>
+</div>
 
-          </button>
+</div>
           : (
-            <ul className="flex space-x-6 text-sm items-center justify-center font-brightmelody tracking-widest">
+            <ul className="flex space-x-6 text-lg font-medium items-center justify-center  tracking-widest">
               {navlinks.map(link =>
                 <Link href={link.href} key={link.href} className={classNames({
                   "text-zinc-700 dark:text-white": link.href === currentPath,
@@ -122,29 +139,32 @@ const Navbar = (props: Props) => {
         }
       </div>
 
+      {/* <div
+       className={`w-full block flex-grow lg:flex lg:items-center lg:w-auto 
+     >
+       <div className="text-sm lg:flex-grow">
+         <a href="#" className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
+           First Link
+         </a>
+         <a href="#" className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
+           Second Link
+         </a>
+         <a href="#" className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
+           Third Link
+         </a>
+         <a href="#" className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
+           Fourth Link
+         </a>
+       </div>
+  </div> */}
       <div
         className={
-          isOpen
-            ? "fixed inset-0  md:hidden bg-white z-50  transition-opacity duration-300 ease-in-out opacity-100"
-            : "fixed inset-0  md:hidden  z-50 bg-white transition-opacity duration-300 ease-in-out opacity-0"
-        }
+`${isOpen ? "block" : "hidden"}`}
       >
-        <div className="relative w-full h-full bg-white pt-8 px-4 pb-4 md:flex md:items-center md:justify-end md:flex-grow-1">
+        <div className=" w-full h-full  pt-8 px-4 pb-4 md:flex md:items-center md:justify-end md:flex-grow-1">
           <ul className="text-lg font-medium md:flex md:items-center md:space-x-8">
             {mobileNavLinks.map((linkObject,index)=>
-             <li key={index}>
-             <Link
-               href={linkObject.href}
-               className={linkObject.className}
-               onClick={toggleMenu}
-             >
-               {linkObject.name}
-             </Link>
-           </li>
-              )}
-           
-            
-        
+             <li key={index}> <Link href={linkObject.href} className={linkObject.className} onClick={toggleMenu}>{linkObject.name}</Link></li>)}
           </ul>
         </div>
       </div>

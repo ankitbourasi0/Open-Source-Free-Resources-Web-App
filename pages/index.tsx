@@ -95,13 +95,13 @@ const Home = ({ blogs }: Props) => {
   const data = blogs.filter(e => e.contentType.contentName === sidebarValues)
   // console.log(data.length == 0)
   return (
-    <div id="bg" className="bg-white w-full  min-h-screen pt-16 pb-6 ">
+    <div id="bg" className="bg-white w-full  min-h-screen pt-1 pb-6 ">
 
       <Container meta={{ title: "SamosaBytes" }} maxWidth="6xl"  >
         {/* <h2 className="text-lg font-semibold mb-2">Latest Blog</h2> */}
 
         <div className="w-full flex max-w-7xl mx-auto bg-white ">
-          <div className="w-full ml-6   pt-20 grid gap-4 px-4 md:px-0 md:grid-cols-2 lg:grid-cols-3  no-scrollbar  md:max-h-[80vh]  lg:max-h-[90vh]  overflow-y-scroll ">
+          <div className="w-full    pt-20 grid gap-4 px-4 md:px-0 md:grid-cols-2 lg:grid-cols-3  no-scrollbar  md:max-h-[80vh]  lg:max-h-[90vh]  overflow-y-scroll ">
 
             {/* latest blog */}
 
@@ -110,10 +110,10 @@ const Home = ({ blogs }: Props) => {
                 <Image src={"/BG/empty.svg"} className=" md:min-w-[600px] min-w-[130px] mx-auto  " fill={false} width={420} height={360} alt="No Blogs" />
               </div> :
               data.map(item => 
-              <Suspense>
+           
               <LatestBlog blog={item} key={item.id} />
                 
-              </Suspense>
+           
               )
               )
               :
@@ -127,7 +127,7 @@ const Home = ({ blogs }: Props) => {
             }
 
           </div>
-          <div className="w-full max-w-[250px] mx-4 mt-20 hidden md:block   sm:p-4 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-100 shadow-2xl shadow-gray-600/10 backdrop-blur-sm  ">
+          <div className="w-full max-w-[250px] mx-4 mt-20 h-full min-h-[70vh] max-h-[75vh] hidden md:block   sm:p-4 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-100 shadow-2xl shadow-gray-600/10 backdrop-blur-sm  ">
             <h2 className="my-2 text-black">Categories</h2>
             <div className="w-full flex flex-col ">
               {sideBar.map(btn => <button key={btn.buttonName} onClick={() => setsidebarValues(btn.value)} className="flex py-2 border-b mb-2 border-zinc-100 items-center space-x-2 text-left dark:text-white text-sm  w-full text-gray-800 ">
@@ -139,11 +139,13 @@ const Home = ({ blogs }: Props) => {
 
             </div>
           </div>
+       
         </div>
+        
 
       </Container>
 
-
+      
       {/* <img src="./BG/9.jpg" className="w-full min-h-screen" /> */}
 
 

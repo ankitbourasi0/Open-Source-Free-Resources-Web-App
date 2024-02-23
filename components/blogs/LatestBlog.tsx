@@ -1,7 +1,7 @@
 import CategoryBox from "components/CategoryBox";
 import WebImage from "components/WebImage";
 import Link from "next/link";
-import React from "react";
+import React, { Suspense } from "react";
 import readingTime from "reading-time";
 type Props = {
   blog: Blog;
@@ -13,7 +13,7 @@ const LatestBlog = ({ blog }: Props) => {
 
   return (
     <div className="">
-
+      <Suspense>
       {/* Blog */}
       <Link href={`/blog/${blog.slug}`}>
 
@@ -68,7 +68,7 @@ const LatestBlog = ({ blog }: Props) => {
 
 
       </Link>
-
+      </Suspense>
 
 
 
