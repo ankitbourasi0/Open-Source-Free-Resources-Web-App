@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-
+import path from "path"
 
 
 export default async function handler(
@@ -16,7 +16,7 @@ export default async function handler(
     try {
         
         await res.revalidate('/')
-        await res.revalidate(`/blog/${req.body.data.slug}`)
+        await res.revalidate(`/blog/${req.body.data.content.slug}`)
 
         return res.json({revalidated: true})
 
