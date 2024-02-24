@@ -9,7 +9,7 @@ export default async function handler(
 ) {
 
     // checking for the secret
-    if(req.headers['SECRET'] !== process.env.SECRET){
+    if(req.query.secret !== process.env.SECRET){
         return res.status(401).json({message: 'Invalid token'})
     }
 
