@@ -118,7 +118,7 @@ const Home = ({ blogs }: Props) => {
               )
               :
               (blogs.map(item =>
-                <Suspense fallback={<div id="loader"></div>}>
+                <Suspense key={item.id} fallback={<div id="loader"></div>}>
                 <LatestBlog blog={item} key={item.id} />
 
                 </Suspense>

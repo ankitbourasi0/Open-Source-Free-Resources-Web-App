@@ -9,12 +9,16 @@ export default async function handler(
 ) {
 
     // checking for the secret
-    if(req.headers['secret'] !== process.env.SECRET){
+    if(req.headers['SECRET'] !== process.env.SECRET){
         return res.status(401).json({message: 'Invalid token'})
     }
 
     try {
-        
+        console.log("req.body.data.content.slug",req.body.data.content.slug)
+        console.log("req.body.data",req.body.data)
+
+        console.log("req.body.data.content",req.body.data.content)
+
         await res.revalidate('/')
         await res.revalidate(`/blog/${req.body.data.content.slug}`)
 
