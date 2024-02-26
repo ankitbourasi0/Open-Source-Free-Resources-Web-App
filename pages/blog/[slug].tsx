@@ -8,6 +8,7 @@ import moment from "moment";
 import readingTime from "reading-time";
 import CategoryBox from "components/CategoryBox";
 import Sharer from "components/Sharer";
+import Script from "next/script";
 
 type Props = {
   blog: Blog;
@@ -65,6 +66,8 @@ function Blog({ blog }: Props) {
           </div>
         </div>
       </div>
+      <Script async={true} data-cfasync="false" src="//pl22621862.profitablegatecpm.com/c74ed6e06ac4f9f1be60d1cca46fdd20/invoke.js"></Script>
+<div id="container-c74ed6e06ac4f9f1be60d1cca46fdd20"></div>
 
 
       <Container

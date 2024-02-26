@@ -3,6 +3,7 @@ import CategoryCard from 'components/category/CategoryCard';
 import useMediaQuery from 'components/utils/useCustomScreenSize';
 import { GetStaticProps } from 'next';
 import Image from 'next/image';
+import Script from 'next/script';
 import React, { useEffect, useState } from 'react'
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import services from 'services';
@@ -15,6 +16,8 @@ const Categories = ({ blogs }: Props) => {
   const [query, setQuery] = useState('');
   const [isCategoryButtonClicked, setisCategoryButtonClicked] = useState(true)
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    <Script type='text/javascript' src='//pl22573999.profitablegatecpm.com/0b/70/41/0b7041be3c65bda5fb81457794288a43.js'></Script>
+
     console.log(blogs)
     setQuery(e.target.value)
   }
