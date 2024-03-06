@@ -21,6 +21,7 @@ import { CgTranscript } from "react-icons/cg";
 import { GrResources } from "react-icons/gr";
 import { SiSololearn } from "react-icons/si";
 
+
 /*
 
 List
@@ -170,7 +171,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       blogs,
-
+      revalidate: 3600
     },
   };
 };

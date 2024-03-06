@@ -2,6 +2,7 @@ import WebImage from 'components/WebImage';
 import CategoryCard from 'components/category/CategoryCard';
 import useMediaQuery from 'components/utils/useCustomScreenSize';
 import { GetStaticProps } from 'next';
+import { revalidatePath } from 'next/cache';
 import Image from 'next/image';
 import Script from 'next/script';
 import React, { useEffect, useState } from 'react'
@@ -102,6 +103,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
   return {
     props: {
       blogs,
+      revalidate: 3600
+     
     },
   };
 };

@@ -4,10 +4,11 @@ import { ThemeProvider } from "next-themes";
 import { Analytics } from "@vercel/analytics/react";
 import Layout from "layouts/Layout";
 import Script from "next/script";
-
+import { GoogleTagManager } from '@next/third-parties/google'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <main>
+      <GoogleTagManager gtmId="GTM-NTB6GVB8" />
       <Script id="Adsense-id" data-ad-client="ca-pub-4782798272247151"
         async strategy="afterInteractive"
         onError={(e) => { console.error('Script failed to load', e) }}

@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 import path from "path"
-
+//http://localhost:3000/api/revalidate?path=/&secret=h9qujql20j9oplpvt7kg7mvu77gxjnkr
 
 export default async function handler(
   req: NextApiRequest,
@@ -14,12 +14,12 @@ export default async function handler(
     }
 
     const path = req.query.path as string
-
+    const  path2 = req.body.data.content.slug as string 
     try {
         
 
         await res.revalidate(path)
-        // await res.revalidate(`/blog/${req.body.data.content.slug}`)
+        await res.revalidate(`/blog/${path2}`)
 
         return res.json({revalidated: true})
 
