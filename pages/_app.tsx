@@ -5,7 +5,9 @@ import { Analytics } from "@vercel/analytics/react";
 import Layout from "layouts/Layout";
 import Script from "next/script";
 import { GoogleTagManager } from '@next/third-parties/google'
+import TaboolaPixel from "components/TaboolPixel";
 function MyApp({ Component, pageProps }: AppProps) {
+ const  publisherId = 1661738
   return (
     <main>
       <GoogleTagManager gtmId="GTM-NTB6GVB8" />
@@ -15,6 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
         crossOrigin="anonymous"
       />
+      <TaboolaPixel publisherId={publisherId} />
         <Script type='text/javascript' src='//pl22573999.profitablegatecpm.com/0b/70/41/0b7041be3c65bda5fb81457794288a43.js'></Script>
 
       <ThemeProvider attribute="class">
