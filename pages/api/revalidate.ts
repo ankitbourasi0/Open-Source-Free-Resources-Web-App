@@ -8,25 +8,25 @@ export default async function handler(
   res: NextApiResponse
 ) {
 
-    // checking for the secret
-    if(req.query.secret !== process.env.SECRET){
-        return res.status(401).json({message: `Invalid Token`})
-    }
+    // // checking for the secret
+    // if(req.query.secret !== process.env.SECRET){
+    //     return res.status(401).json({message: `Invalid Token`})
+    // }
 
-    const path = req.query.path as string
-    const  path2 = req.body.data.content.slug as string 
-    try {
+    // const path = req.query.path as string
+    // const  path2 = req.body.data.content.slug as string 
+    // try {
         
 
-        await res.revalidate(path)
-        await res.revalidate(`/blog/${path2}`)
+    //     await res.revalidate(path)
+    //     await res.revalidate(`/blog/${path2}`)
 
-        return res.json({revalidated: true})
+    //     return res.json({revalidated: true})
 
-    } catch (error) {
-        return res.status(500).send({
-            error: 'Error'
-        })
-    }
-
+    // } catch (error) {
+    //     return res.status(500).send({
+    //         error: 'Error'
+    //     })
+    // }
+    
 }
